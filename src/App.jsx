@@ -1,7 +1,4 @@
 import { useState } from 'react'
-// import './App.css' 
-// not using the react's default css here instead using tailwindcss with the import "./output.css";
-import "./output.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import NavbarComponent from './components/NavbarComponent';
@@ -14,6 +11,9 @@ import CourseDetail from './pages/CourseDetail';
 import AllCourses from './pages/AllCourses';
 import RegisterUser from './pages/RegisterUser';
 import RegisterCourse from './pages/Registercourse';
+import Dashboard from './pages/Dashboard';
+import Grades from './pages/Grades';
+import SiteAdministration from './pages/SiteAdministration';
 
 function App() {
 
@@ -25,9 +25,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/user" element={<UserProfile />} />
           <Route path="/course" element={<CourseDetail />} />
+          <Route path="/admin" element={<SiteAdministration />} />
           <Route path="/all-courses" element={<AllCourses />} />
           <Route path="/register-user" element={<RegisterUser />} />
           <Route path="/register-course" element={<RegisterCourse />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/grades" element={<Grades />} />
         </Routes>
         <FooterComponent />
       </Router>

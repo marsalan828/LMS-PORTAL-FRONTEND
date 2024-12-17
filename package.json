@@ -10,11 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fullcalendar/daygrid": "^6.1.15",
+    "@fullcalendar/interaction": "^6.1.15",
+    "@fullcalendar/react": "^6.1.15",
+    "@fullcalendar/timegrid": "^6.1.15",
+    "@reduxjs/toolkit": "^2.5.0",
     "axios": "^1.7.9",
     "flowbite": "^2.5.2",
+    "formik": "^2.4.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.2"
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.0.2",
+    "yup": "^1.5.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

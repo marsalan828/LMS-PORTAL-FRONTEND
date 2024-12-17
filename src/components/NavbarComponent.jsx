@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import ReactLogo from "../assets/react.svg";
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -6,31 +8,38 @@ const Navbar = () => {
   return (
     <nav className="bg-blue-600 text-black shadow-md">
       <div className="container mx-auto px-4 py-2 flex justify-between items-center">
-        {/* Left: Logo */}
-        <div className="flex items-center">
-          <img
-            src="https://via.placeholder.com/40" // Replace with your logo image link
-            alt="Logo"
-            className="h-10 w-10 rounded-full mr-3"
-          />
-          <span className="text-xl font-bold"></span>
+        <div className="nav-left flex w-[25vw] items-center">
+          {/* Left: Logo */}
+          <div className="flex items-center">
+            <Link to="/">
+              <img
+                // src="https://via.placeholder.com/40" // Replace with your logo image link
+                src={ReactLogo} // Replace with your logo image link
+                alt="Logo"
+                className="h-10 w-10 rounded-full mr-3"
+              />
+            </Link>
+            <span className="text-xl font-bold"></span>
+          </div>
+
+          {/* Center: Navigation Links */}
+          <ul className="flex md:flex space-x-6">
+            <li className="hover:text-gray-300">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="hover:text-gray-300">
+              <Link to="/dashboard">Dashboard</Link>
+            </li>
+            <li className="hover:text-gray-300">
+              <Link to="/all-courses">My Courses</Link>
+            </li>
+            <li className="hover:text-gray-300">
+              <Link to="/admin">Site Administration</Link>
+            </li>
+          </ul>
         </div>
-
-        {/* Center: Navigation Links */}
-        <ul className="flex md:flex space-x-6">
-          <li className="hover:text-gray-300">
-            <a href="/home">Home</a>
-          </li>
-          <li className="hover:text-gray-300">
-            <a href="/dashboard">Dashboard</a>
-          </li>
-          <li className="hover:text-gray-300">
-            <a href="/my-courses">My Courses</a>
-          </li>
-        </ul>
-
         {/* Right: Dropdown */}
-        <div className="relative">
+        <div className="nav-right relative">
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className="flex items-center space-x-2 focus:outline-none hover:text-gray-300"
@@ -57,13 +66,13 @@ const Navbar = () => {
             <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-md shadow-lg">
               <ul className="py-2">
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <a href="/profile">Profile</a>
+                  <Link to="/user">Profile</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <a href="/grades">Grades</a>
+                  <Link to="/grades">Grades</Link>
                 </li>
                 <li className="px-4 py-2 hover:bg-gray-200">
-                  <a href="/logout">Logout</a>
+                  <Link to="/logout">Logout</Link>
                 </li>
               </ul>
             </div>

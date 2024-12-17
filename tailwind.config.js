@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html", // Reference the root HTML file
-    "./src/**/*.{html,js,jsx}",
-  ],
+
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'image-frontend': "url('./src/assets/22589.jpg')"
+      }
+    },
   },
+
   plugins: [],
 };
