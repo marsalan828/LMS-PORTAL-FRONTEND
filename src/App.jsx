@@ -14,13 +14,17 @@ import RegisterCourse from './pages/Registercourse';
 import Dashboard from './pages/Dashboard';
 import Grades from './pages/Grades';
 import SiteAdministration from './pages/SiteAdministration';
+import Login from './pages/Login';
 
 function App() {
 
   return (
     <>
       <Router>
+        {/* these are the public routes accessible by everyone */}
         <NavbarComponent />
+        <Route path="/login" element={<Login />} />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/user" element={<UserProfile />} />
